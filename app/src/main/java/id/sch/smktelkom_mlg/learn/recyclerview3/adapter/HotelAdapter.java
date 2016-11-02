@@ -21,6 +21,11 @@ import id.sch.smktelkom_mlg.learn.recyclerview3.model.Hotel;
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
 {
     ArrayList<Hotel> hotelList;
+    IHotelAdapter mIHotelAdapter;
+    public interface IHotelAdapter
+    {
+        void doClick(int pos);
+    }
     public HotelAdapter(ArrayList<Hotel> hotelList)
     {
         this.hotelList = hotelList;
@@ -65,12 +70,6 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder>
                 }
             });
         }
-    }
-
-    IHotelAdapter mIHotelAdapter;
-    public interface IHotelAdapter
-    {
-        void doClick(int pos);
     }
 
     public HotelAdapter(Context context, ArrayList<Hotel> hotelList)
